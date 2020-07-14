@@ -2,17 +2,15 @@
 
 namespace TobiSchulz\Favoritable\Traits;
 
-use TobiSchulz\Favoritable\Favorite;
-
 trait HasFavorites
 {
     /**
-    * Define a one-to-many relationship.
+    * Define a morph-many relationship.
     *
-    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    * @return \Illuminate\Database\Eloquent\Relations\MorphedByMany
     */
-    public function favorites()
+    public function favorites($modelClass)
     {
-        return $this->hasMany(Favorite::class, 'user_id');
+        return $this->morphedByMany($modelClass, 'favoriteable', 'favorites', 'user_id');
     }
 }
