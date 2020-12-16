@@ -37,7 +37,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use TobiSchulz\Favoritable\Traits\Favoriteable;
 
-class Post
+class Post extends Model
 {
     use Favoriteable;
 
