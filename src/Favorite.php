@@ -25,7 +25,7 @@ class Favorite extends Model
     /**
      * Returns the relatied user
      *
-     * @return \Elisana\Base\User
+     * @return \App\Models\User
      */
     public function user()
     {
